@@ -181,7 +181,13 @@
         });
 
         const backIcon = document.getElementById('search-back');
-
+      
+            function search() {
+                const keyword = searchInput.value.trim();
+                if (!keyword) {
+                    alert('请输入要搜索的内容哦~');
+                    return;
+                }  
             localStorage.setItem('lastSearch', keyword); // 只存最后一次
 
             const searchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(keyword)}`;
